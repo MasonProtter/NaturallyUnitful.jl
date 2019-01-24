@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/MasonProtter/NaturallyUnitful.jl.svg?branch=master)](https://travis-ci.com/MasonProtter/NaturallyUnitful.jl)
+
 # NaturallyUnitful.jl
 
 This package reexports [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) alongside two extra functions
