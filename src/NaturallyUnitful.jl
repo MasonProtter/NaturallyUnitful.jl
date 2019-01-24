@@ -34,7 +34,7 @@ function natural(q)
              q*ħc^(-α+ϕ/2)*ħ^(-δ)*c^(2(β-ϕ/2))*kB^(γ)*(4π*ϵ0)^(-ϕ/2))
 end
 
-function unnnatural(targetUnit, q)
+function unnatural(targetUnit, q)
     natTarget = natural(1targetUnit)
     natQ = natural(q)
     ratio = natQ/natTarget
@@ -45,6 +45,6 @@ function unnnatural(targetUnit, q)
     end
 end
 
-export natural, unnnatural
+export natural, unnatural
 
 end # module
