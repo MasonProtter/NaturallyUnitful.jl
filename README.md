@@ -2,7 +2,7 @@
 
 This package reexports [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) alongside two extra functions
  * `natrual`, a function for converting a given quantity to the Physicst's so called "natural units" in which `ħ = c = ϵ₀ = 1`
-```julia-repl
+```julia
 julia> using NaturallyUnitful
 
 julia> natural(1u"m")
@@ -12,7 +12,7 @@ julia> natural(1e8u"m/s")
 0.33356409519815206
 ```
  * `unnatrual`, a function for converting from natural units to a given `unnatural` unit such as `meters`
- ```julia-repl
+ ```julia
  julia> unnnatural(u"m", 5.067730759202785e6u"eV^-1")
 1.0 m
 
