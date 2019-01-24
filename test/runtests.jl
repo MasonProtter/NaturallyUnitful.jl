@@ -7,5 +7,5 @@ using Test, NaturallyUnitful
 
     @test natural(1e8u"m/s") == 0.33356409519815206
 
-    @test unnatrual(u"m/s", 0.33356409519815206) == 1e8u"m/s"
+    @test unnatural(u"m/s", 0.33356409519815206) == 1e8u"m/s"
 end
