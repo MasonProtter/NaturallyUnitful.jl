@@ -21,18 +21,3 @@ git:
 matrix:
  allow_failures:
  - julia: nightly
-
-script:
- - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
- - julia --project --check-bounds=yes -e 'using Pkg; Pkg.clone(pwd()); Pkg.build("NaturallyUnitful"); Pkg.test("NaturallyUnitful"; coverage=true)'
-
-after_success:
-  - julia -e 'using Pkg'
-  # push coverage results to Coveralls
-  - julia -e 'import NaturallyUnitful'
-  - julia -e 'joinpath(dirname(pathof(NaturallyUnitful)), ".."); Pkg.add("Coverage"); using Coverage; Coveralls.submit(Coveralls.process_folder())'
-  # push coverage results to Codecov
-  - julia -e 'using Coverage; Codecov.submit(Codecov.process_folder())'
-  # # Documentation
-  # - julia -e 'Pkg.add("Documenter")'
-  # - julia -e 'include(joinpath(dirname(pathof(NaturallyUnitful)), "../docs", "make.jl"))'
