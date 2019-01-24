@@ -3,7 +3,7 @@
 # NaturallyUnitful.jl
 
 This package reexports [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) alongside two extra functions
- * `natrual`, a function for converting a given quantity to the Physicst's so called "natural units" in which 
+ * `natural`, a function for converting a given quantity to the Physicst's so called "natural units" in which 
  
  `ħ = c = ϵ₀ = 1`
 ```julia
