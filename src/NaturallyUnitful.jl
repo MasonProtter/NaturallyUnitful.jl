@@ -25,6 +25,8 @@ end
 
 dimDict(x::Unitful.Quantity{T}) where {T} = dimDict(dimension(x))
 
+dimDict(x) = Dict(:Length => 0, :Mass => 0, :Temperature => 0, :Time => 0, :Current => 0)
+
 function natural(q)
     D = dimDict(q)
     (α,β,γ,δ,ϕ) = (D[:Length], D[:Mass], D[:Temperature], D[:Time], D[:Current])
