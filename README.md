@@ -15,7 +15,7 @@ julia> natural(1u"m")
 julia> natural(1e8u"m/s")
 0.33356409519815206
 ```
- * `unnatrual`, a function for converting from natural units to a given `unnatural` unit such as `meters`
+ * `unnatrual`, a function for converting from natural units to a given `unnatural` unit such as meters
  ```julia
  julia> unnatural(u"m", 5.067730759202785e6u"eV^-1")
 1.0 m
