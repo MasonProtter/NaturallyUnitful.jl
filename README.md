@@ -17,6 +17,10 @@ julia> natural(3e8u"m/s")
 ```
 `natural` also accecpts a keyword argument `base` (defaults to electron volts) which determines what unit
 your natural quantity is constructed from. Currently, the `base` unit must have dimensions of energy. 
+```
+julia> natural(1u"m", base=u"GeV")
+5.067730759202785e15 GeV^-1
+```
 
  * `unnatural`, a function for converting from natural units to a given `unnatural` unit such as meters
  ```julia
