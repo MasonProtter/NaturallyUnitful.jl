@@ -23,3 +23,11 @@ julia> natural(3e8u"m/s")
 julia> unnatural(u"m/s", 1)
 2.99792458e8 m s^-1
  ```
+
+## Installation Instructions 
+
+To install, simply open the `pkg` prompt
+from the julia REPL by pressing `]` and type
+```
+pkg> add NaturallyUnitful
+```
