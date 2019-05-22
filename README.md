@@ -15,6 +15,9 @@ julia> natural(1u"m")
 julia> natural(3e8u"m/s")
 1.000692285594456
 ```
+`natural` also accecpts a keyword argument `base` (defaults to electron volts) which determines what unit
+your natural quantity is constructed from. Currently, the `base` unit must have dimensions of energy. 
+
  * `unnatural`, a function for converting from natural units to a given `unnatural` unit such as meters
  ```julia
  julia> unnatural(u"m", 5.067730759202785e6u"eV^-1")
