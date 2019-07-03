@@ -3,11 +3,11 @@ module NaturallyUnitful
 using Reexport
 @reexport using Unitful
 
-c  = 1u"c"
-ħ  = 1.0545718e-34u"kg*m^2/s"
-ħc = ħ*c
-kB = 1.38064852e-23u"kg*m^2/s^2/K"
-ϵ0 = 8.85418782e-12u"m^-3*kg^-1*s^4*A^2"
+const c  = 1u"c"
+const ħ  = 1.0545718e-34u"kg*m^2/s"
+const ħc = ħ*c
+const kB = 1.38064852e-23u"kg*m^2/s^2/K"
+const ϵ0 = 8.85418782e-12u"m^-3*kg^-1*s^4*A^2"
 
 setDimPow(D::Dict, x::Unitful.Dimension{T}) where {T} = D[T] = x.power
 
