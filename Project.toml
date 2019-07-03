@@ -1,7 +1,7 @@
 name = "NaturallyUnitful"
 uuid = "872cf16e-200e-11e9-2cdf-8bb39cfbec41"
 authors = ["MasonProtter <mason.protter@gmail.com>"]
-version = "0.2.0"
+version = "0.3.0"
 
 [deps]
 Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
