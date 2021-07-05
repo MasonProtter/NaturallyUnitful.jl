@@ -15,4 +15,6 @@ using NaturallyUnitful: c, ħ, ħc, kB, ϵ0
     @test natural(1u"m", base=u"GeV") ≈ uconvert(u"GeV^-1", 1u"m"/(ħc)) 
 
     @test unnatural(u"K", 1u"eV") ≈ uconvert(u"K", 1u"eV"/kB)
+
+    @test unnatural(u"(m/s)^(3/2)", 1) ≈ uconvert(u"(m/s)^(3/2)", c^(3/2))
 end

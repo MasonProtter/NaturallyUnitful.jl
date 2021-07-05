@@ -12,7 +12,7 @@ const ϵ0 = 8.85418782e-12u"m^-3*kg^-1*s^4*A^2"
 setDimPow(D::Dict, x::Unitful.Dimension{T}) where {T} = D[T] = x.power
 
 function dimDict(x::Unitful.Dimensions{T}) where {T}
-    D = Dict(:Length => 0,
+    D = Dict{Symbol, Rational}(:Length => 0,
              :Mass => 0,
              :Temperature => 0,
              :Time => 0,
@@ -25,7 +25,7 @@ end
 
 dimDict(x::Unitful.Quantity{T}) where {T} = dimDict(dimension(x))
 
-dimDict(x) = Dict(:Length => 0, :Mass => 0, :Temperature => 0, :Time => 0, :Current => 0)
+dimDict(x) = Dict{Symbol, Rational}(:Length => 0, :Mass => 0, :Temperature => 0, :Time => 0, :Current => 0)
 
 
 gettypeparams(::Unitful.FreeUnits{T, U, V}) where {T, U, V} = T, U, V
