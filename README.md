@@ -4,7 +4,7 @@
 
 This package reexports [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) alongside two extra functions:
 
-1. `natural`, a function for converting a given quantity to the Physicst's so-called
+1. `natural`, a function for converting a given quantity to the Physicist's so-called
    "[natural units](https://en.wikipedia.org/wiki/Natural_units)", in which
  
    `ħ = c = ϵ₀ = kb = 1`
@@ -19,7 +19,7 @@ This package reexports [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) al
    1.000692285594456
    ```
 
-   `natural` also accecpts a keyword argument `base` (defaults to electron volts) which determines what unit
+   `natural` also accepts a keyword argument `base` (defaults to electron volts) which determines what unit
    your natural quantity is constructed from. Currently, the `base` unit must have dimensions of energy. 
 
    ```julia
