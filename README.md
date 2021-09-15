@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/MasonProtter/NaturallyUnitful.jl.svg?branch=master)](https://travis-ci.com/MasonProtter/NaturallyUnitful.jl)
+[![CI](https://github.com/MasonProtter/NaturallyUnitful.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/MasonProtter/NaturallyUnitful.jl/actions/workflows/ci.yml)
 
 # NaturallyUnitful.jl
 
