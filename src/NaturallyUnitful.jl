@@ -1,13 +1,15 @@
 module NaturallyUnitful
 
 using Reexport
+
 @reexport using Unitful
+export natural, unnatural
 
 const c  = 1u"c"
-const ħ  = 1.0545718e-34u"kg*m^2/s"
+const ħ  = Unitful.ħ
 const ħc = ħ*c
-const kB = 1.38064852e-23u"kg*m^2/s^2/K"
-const ϵ0 = 8.85418782e-12u"m^-3*kg^-1*s^4*A^2"
+const kB = Unitful.k
+const ϵ0 = Unitful.ϵ0
 
 setDimPow(D::Dict, x::Unitful.Dimension{T}) where {T} = D[T] = x.power
 
@@ -94,6 +96,5 @@ function unnatural(targetUnit, q)
     end
 end
 
-export natural, unnatural
 
 end # module
