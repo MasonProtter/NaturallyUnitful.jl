@@ -5,7 +5,9 @@
 This package reexports [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) alongside two extra functions:
 
 1. `natural`, a function for converting a given quantity to the Physicist's so-called
-   "[natural units](https://en.wikipedia.org/wiki/Natural_units)", in which
+   "[natural units](https://en.wikipedia.org/wiki/Natural_units)", in particular the
+   [rationalized Planck units](https://en.wikipedia.org/wiki/Planck_units#Alternative_choices_of_normalization),
+   in which
  
    `ħ = c = ϵ₀ = kb = 1`
 
