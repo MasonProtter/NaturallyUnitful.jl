@@ -12,7 +12,7 @@ using NaturallyUnitful: c0, ħc0, k
 
     @test natural(1u"kg") ≈ uconvert(u"GeV", 1u"kg" * c0^2)
 
-    @test natural(1u"m", base=u"GeV") ≈ uconvert(u"GeV^-1", 1u"m" / ħc0)
+    @test natural(1u"m"; base=u"GeV") ≈ uconvert(u"GeV^-1", 1u"m" / ħc0)
 
     @test unnatural(u"K", 1u"eV") ≈ uconvert(u"K", 1u"eV" / k)
 

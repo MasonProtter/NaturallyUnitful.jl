@@ -1,6 +1,8 @@
+# NaturallyUnitful.jl
+
+[![Code Style: Blue](https://img.shields.io/badge/code%20style-blue-4495d1.svg)](https://github.com/invenia/BlueStyle)
 [![CI](https://github.com/MasonProtter/NaturallyUnitful.jl/actions/workflows/ci.yml/badge.svg)](https://github.com/MasonProtter/NaturallyUnitful.jl/actions/workflows/ci.yml)
 
-# NaturallyUnitful.jl
 
 This package reexports [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) alongside two extra functions:
 

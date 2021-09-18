@@ -12,11 +12,9 @@ const ħc0 = ħ * c0
 setDimPow(D::Dict, x::Unitful.Dimension{T}) where {T} = D[T] = x.power
 
 function dimDict(x::Unitful.Dimensions{T}) where {T}
-    D = Dict{Symbol, Rational}(:Length => 0,
-             :Mass => 0,
-             :Temperature => 0,
-             :Time => 0,
-             :Current => 0)
+    D = Dict{Symbol,Rational}(
+        :Length => 0, :Mass => 0, :Temperature => 0, :Time => 0, :Current => 0
+    )
     for t in T
         setDimPow(D, t)
     end
@@ -25,10 +23,13 @@ end
 
 dimDict(x::Unitful.Quantity{T}) where {T} = dimDict(dimension(x))
 
-dimDict(x) = Dict{Symbol, Rational}(:Length => 0, :Mass => 0, :Temperature => 0, :Time => 0, :Current => 0)
+function dimDict(x)
+    return Dict{Symbol,Rational}(
+        :Length => 0, :Mass => 0, :Temperature => 0, :Time => 0, :Current => 0
+    )
+end
 
-
-gettypeparams(::Unitful.FreeUnits{T, U, V}) where {T, U, V} = T, U, V
+gettypeparams(::Unitful.FreeUnits{T,U,V}) where {T,U,V} = T, U, V
 const energydimension = gettypeparams(u"GeV")[2]
 
 """
@@ -55,15 +56,19 @@ Examples:
 """
 natural(q; base=u"eV") = _natural(base, q)
 
-function _natural(base::Unitful.FreeUnits{T, energydimension, U}, q) where {T, U}
+function _natural(base::Unitful.FreeUnits{T,energydimension,U}, q) where {T,U}
     D = dimDict(q)
     (α, β, γ, δ, ϕ) = (D[:Length], D[:Mass], D[:Temperature], D[:Time], D[:Current])
-    uconvert(base^(-α - δ + β + γ + ϕ),
-             q * ħc0^(-α + ϕ / 2) * ħ^(-δ) * c0^(2(β - ϕ / 2)) * k^(γ) * (4π * ϵ0)^(-ϕ / 2))
+    return uconvert(
+        base^(-α - δ + β + γ + ϕ),
+        q * ħc0^(-α + ϕ / 2) * ħ^(-δ) * c0^(2(β - ϕ / 2)) * k^(γ) * (4π * ϵ0)^(-ϕ / 2),
+    )
 end
 
-function _natural(base::Unitful.FreeUnits{T, U, V}, q) where {T, U, V}
-    throw("""natural(q; base)` where `base` has dimensions `$U` has not yet been implemented. Please use a base with dimensions of `energy` and then use `unnatural` to convert to your desired units.""")
+function _natural(base::Unitful.FreeUnits{T,U,V}, q) where {T,U,V}
+    return throw(
+        """natural(q; base)` where `base` has dimensions `$U` has not yet been implemented. Please use a base with dimensions of `energy` and then use `unnatural` to convert to your desired units.""",
+    )
 end
 
 """
@@ -87,12 +92,11 @@ function unnatural(targetUnit, q)
     natTarget = natural(1targetUnit)
     natQ = natural(q)
     ratio = natQ / natTarget
-    if typeof(ratio |> dimension) == Unitful.Dimensions{()}
+    if typeof(dimension(ratio)) == Unitful.Dimensions{()}
         (ratio)targetUnit
     else
         throw(Unitful.DimensionError)
     end
 end
-
 
 end # module
