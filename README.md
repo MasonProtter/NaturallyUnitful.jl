@@ -7,7 +7,9 @@ This package reexports [Unitful.jl](https://github.com/ajkeller34/Unitful.jl) al
 1. `natural`, a function for converting a given quantity to the Physicist's so-called
    "[natural units](https://en.wikipedia.org/wiki/Natural_units)", in which
  
-   `ħ = c = ϵ₀ = kb = 1`
+   `ħ = c0 = ϵ₀ = k = 1`
+
+   where `c0` is the speed of light in vacuum and `k` is the Boltzmann constant.
 
    ```julia
    julia> using NaturallyUnitful
